@@ -1,3 +1,29 @@
-.hello {
-  color: red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  background-color: aqua;
+}
+
+#header-container {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+#header-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.submit {
+  border: none;
+  background: none;
 }
