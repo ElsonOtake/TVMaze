@@ -1,3 +1,8 @@
-.hello {
-  color: red;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  padding: 2rem 2rem;
 }
