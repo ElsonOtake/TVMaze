@@ -1,9 +1,18 @@
-const shows = 'https://api.tvmaze.com/shows';
+let shows = 'https://api.tvmaze.com/shows';
 
-const getData = async () => { 
+export const getData = async () => { 
   const response = await fetch(shows); 
   const data = await response.json(); 
   return data 
 }
 
-export default getData
+ export const getDataById = async (id) => {
+  shows = `https://api.tvmaze.com/shows/${id}`
+  const response = await fetch(shows); 
+  const data = await response.json(); 
+  return data
+}
+
+
+
+
