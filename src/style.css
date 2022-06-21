@@ -46,7 +46,7 @@ header {
 }
 
 .submit:hover {
-  color: #ffb43a
+  color: #ffb43a;
 }
 
 footer {
@@ -65,7 +65,7 @@ footer {
 }
 
 #header-search {
-  width:100%;
+  width: 100%;
   border: none;
   outline: none;
   color: #fcfeff;
@@ -74,14 +74,12 @@ footer {
 }
 
 @media (max-width: 710px) {
-
   #header-search-bar {
     max-width: 240px;
   }
 }
 
 @media (max-width: 516px) {
-  
   header {
     height: 100px;
   }
@@ -96,9 +94,6 @@ footer {
 
   #header-search-bar {
     max-width: 360px;
-  }
-
-  #header-search-bar {
     margin-top: 10px;
   }
 }
