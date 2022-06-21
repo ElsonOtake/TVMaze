@@ -1,8 +1,9 @@
-import loadArticles from './loadArticles.js';
+// import createNewApp from './createNewApp.js';
+import loadArticles from './modules/loadArticles.js';
 import './style.css';
 
-const shows = 'https://api.tvmaze.com/shows';
+// if (!localStorage.getItem('tvMazeId')) {
+//   createNewApp();
+// } 
 
-fetch(shows)
-  .then((response) => response.json())
-  .then((data) => loadArticles(data));
+loadArticles();
