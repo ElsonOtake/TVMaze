@@ -50,6 +50,14 @@ main h2 {
   padding: 1rem 0;
 }
 
+main p {
+  display: none;
+}
+
+main button {
+  padding: 0.6rem 1.2rem;
+}
+
 footer {
   padding: 2rem 10%;
   bottom: 0;
