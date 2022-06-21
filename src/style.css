@@ -28,6 +28,28 @@ header {
   background: none;
 }
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+main article {
+  padding: 1rem;
+  width: 24%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+main img {
+  width: 90%;
+  height: auto;
+}
+
+main h2 {
+  padding: 1rem 0;
+}
+
 footer {
   padding: 2rem 10%;
   bottom: 0;
