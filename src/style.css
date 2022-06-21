@@ -46,6 +46,15 @@ main img {
   height: auto;
 }
 
+main div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  gap: 0.4rem;
+}
+
 main h2 {
   padding: 1rem 0;
 }
