@@ -1,9 +1,7 @@
-import { Button } from "bootstrap";
-
 const main = document.querySelector('main');
 
 const loadArticles = (data) => {
-  data.forEach(maze => {
+  data.forEach((maze) => {
     const article = document.createElement('article');
     const img = document.createElement('img');
     img.src = maze.image.medium;
@@ -19,11 +17,12 @@ const loadArticles = (data) => {
     button.type = 'button';
     button.innerText = 'Comments';
     article.appendChild(button);
-    button.addEventListener('click', (e) => {
-      console.log(e.target.previousSibling.innerText);
-    })
+    // I commented this part of code due to linter check warnings about use of console.log
+    // button.addEventListener('click', (e) => {
+    //   console.log(e.target.previousSibling.innerText);
+    // });
     main.appendChild(article);
   });
-}
+};
 
 export default loadArticles;
