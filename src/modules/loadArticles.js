@@ -1,12 +1,13 @@
-import {getData, getDataById} from "./getData.js";
-import {displayPopUp} from "./popUp.js";
+import { getData } from './getData.js';
+import { displayPopUp } from './popUp.js';
+
 const main = document.querySelector('main');
 
 const loadArticles = async () => {
-  const data = await getData()
+  const data = await getData();
   data.forEach((maze) => {
     const article = document.createElement('article');
-    article.id = maze.id
+    article.id = maze.id;
     const img = document.createElement('img');
     img.src = maze.image.medium;
     img.alt = maze.name;
@@ -20,11 +21,11 @@ const loadArticles = async () => {
     const button = document.createElement('button');
     button.type = 'button';
     button.innerText = 'Comments';
-    button.classList.add('button-comments')
+    button.classList.add('button-comments');
     article.appendChild(button);
-    //I commented this part of code due to linter check warnings about use of console.log
+    // I commented this part of code due to linter check warnings about use of console.log
     button.addEventListener('click', async (e) => {
-      displayPopUp(parseInt(e.target.previousSibling.innerText,10))
+      displayPopUp(parseInt(e.target.previousSibling.innerText, 10));
     });
     main.appendChild(article);
   });
