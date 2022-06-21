@@ -19,6 +19,9 @@ const loadArticles = (data) => {
     button.type = 'button';
     button.innerText = 'Comments';
     article.appendChild(button);
+    button.addEventListener('click', (e) => {
+      console.log(e.target.previousSibling.innerText);
+    })
     main.appendChild(article);
   });
 }
