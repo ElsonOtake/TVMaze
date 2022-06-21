@@ -1,7 +1,7 @@
 import loadArticles from './modules/loadArticles.js';
 import './style.css';
 
-// For the creation of the key of new app using the Involvement API we use the following call: 
+// For the creation of the key of new app using the Involvement API we use the following call:
 //
 // fetch(urlNewApp, {
 //   method: 'POST'
