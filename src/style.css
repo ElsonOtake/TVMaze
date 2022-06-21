@@ -17,6 +17,7 @@ header {
   background-color: #1e1e2a;
   z-index: 99;
   height: 60px;
+  top:0
 }
 
 #header-container {
@@ -53,6 +54,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 60px;
 }
 
 main article {
