@@ -49,6 +49,36 @@ header {
   color: #ffb43a;
 }
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+main article {
+  padding: 1rem;
+  width: 24%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+main img {
+  width: 90%;
+  height: auto;
+}
+
+main h2 {
+  padding: 1rem 0;
+}
+
+main p {
+  display: none;
+}
+
+main button {
+  padding: 0.6rem 1.2rem;
+}
+
 footer {
   padding: 1.5rem 10%;
   bottom: 0;
