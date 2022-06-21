@@ -1,4 +1,3 @@
-import callApiShows from './callApiShows';
 import loadArticles from './loadArticles';
 import './style.css';
 
