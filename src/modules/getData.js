@@ -1,7 +1,5 @@
-let shows = 'https://api.tvmaze.com/shows';
-
-export const getData = async () => {
-  const response = await fetch(shows);
+export const getData = async (url) => {
+  const response = await fetch(url);
   const data = await response.json();
   return data;
 };
