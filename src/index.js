@@ -1,7 +1,7 @@
 import { posturlComments } from './modules/global.js';
 import loadArticles from './modules/loadArticles.js';
 import { hidePopUp } from './modules/popUp.js';
-import { deployData, getInputsComments, updateCommentList } from './modules/postComments.js';
+import { getInputsComments, updateCommentList } from './modules/postComments.js';
 import postData from './modules/postData.js';
 import './style.css';
 
