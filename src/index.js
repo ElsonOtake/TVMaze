@@ -1,5 +1,8 @@
+import { posturlComments } from './modules/global.js';
 import loadArticles from './modules/loadArticles.js';
 import { hidePopUp } from './modules/popUp.js';
+import { deployData, getInputsComments, updateCommentList } from './modules/postComments.js';
+import postData from './modules/postData.js';
 import './style.css';
 
 loadArticles();
@@ -7,3 +10,10 @@ loadArticles();
 document.addEventListener('click', (e) => {
   hidePopUp(e);
 });
+
+
+document.addEventListener('submit',(e)=> {
+  e.preventDefault();
+  postData(posturlComments,getInputsComments(e))
+  updateCommentList(e)
+})
