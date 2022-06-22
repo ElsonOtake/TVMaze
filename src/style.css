@@ -238,6 +238,10 @@ footer {
 
 /* COMMENTS FORM SECTION */
 
+.comment-p-tohide {
+  display: none;
+}
+
 .comments-header {
   color: #ece05e;
   margin: 24px 0;
