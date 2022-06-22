@@ -55,6 +55,10 @@ main div {
   gap: 0.4rem;
 }
 
+main div span:first-child.active {
+  color: gold;
+}
+
 main h2 {
   padding: 1rem 0;
 }
