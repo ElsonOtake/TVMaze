@@ -23,7 +23,7 @@ const loadArticles = async () => {
       if (!e.target.classList.contains('active')) {
         e.target.classList.add('active');
         e.target.nextSibling.innerText = parseInt(e.target.nextSibling.innerText, 10) + 1;
-        await console.log(postData(urlLikes, { "item_id": maze.id }));
+        await postData(urlLikes, { item_id: maze.id })
       }
     })
     const spanLikes = document.createElement('span');
