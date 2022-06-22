@@ -1,15 +1,18 @@
-import { getData } from './getData.js';
+import getData from './getData.js';
 import { displayPopUp } from './popUp.js';
 import { shows, urlLikes } from './global.js';
 import postData from './postData.js';
+import counter from './counter.js';
 
 const mainSection = document.querySelector('main');
+let countShows;
 
 const loadArticles = async () => {
   const data = await getData(shows);
   const listLikes = await getData(urlLikes);
 
   data.forEach((maze) => {
+    countShows = counter();
     const articleTvMaze = document.createElement('article');
     const imgShow = document.createElement('img');
     imgShow.src = maze.image.medium;
@@ -48,6 +51,7 @@ const loadArticles = async () => {
     });
     mainSection.appendChild(articleTvMaze);
   });
+  console.log('Number of shows = ' + countShows);
 };
 
 export default loadArticles;

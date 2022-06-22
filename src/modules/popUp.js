@@ -1,4 +1,5 @@
-import { getDataById } from './getData.js';
+import getData from './getData.js';
+import { shows } from './global.js';
 
 const popUpContainer = document.querySelector('.pop-up-container');
 const popUp = document.querySelector('.pop-up');
@@ -46,7 +47,7 @@ const addHtml = (object) => `
 
 export const displayPopUp = async (id) => {
   popUpContainer.innerHTML = '';
-  const data = await getDataById(id);
+  const data = await getData(`${shows}/`, id);
   popUp.style.display = 'flex';
   popUpContainer.insertAdjacentHTML('afterbegin', addHtml(data));
   const genres = document.querySelector('.genres');
