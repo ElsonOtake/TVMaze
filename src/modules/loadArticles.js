@@ -51,7 +51,8 @@ const loadArticles = async () => {
     });
     mainSection.appendChild(articleTvMaze);
   });
-  console.log('Number of shows = ' + countShows);
+  const spanTotal = document.querySelector('footer span:last-child');
+  spanTotal.innerText = `Total : ${countShows}`;
 };
 
 export default loadArticles;
