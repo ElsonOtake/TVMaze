@@ -38,7 +38,7 @@ const addHtml = (object) => `
       <h1 class="form-comments-header">Add a new comment</h1>
       <input class="comment-input" type="text" placeholder="Enter your name...">
       <textarea class="comment-text-area" name="comment" id="" cols="30" rows="7" placeholder="Enter your comment..."></textarea>
-      <button type="submit" class="comment-submit">submit</button>
+      <button type="submit" class="comment-submit">Click to submit</button>
     </form>
   </section>
   

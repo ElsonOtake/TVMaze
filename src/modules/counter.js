@@ -1,8 +1,10 @@
-export const CountComments = (e) => {
+const countComments = (e) => {
   if (e.target.classList.contains('comment-form')) {
     const commentsContainer = document.querySelector('.comments-container');
-    let length = commentsContainer.children.length
-    const commentsHeader = document.querySelector('.comments-header')
-    commentsHeader.innerText = `comments (${length})`
+    const { length } = commentsContainer.children;
+    const commentsHeader = document.querySelector('.comments-header');
+    commentsHeader.innerText = `comments (${length})`;
   } return null;
-}
+};
+
+export default countComments;
