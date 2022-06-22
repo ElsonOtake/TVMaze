@@ -1,4 +1,5 @@
-import getData from './getData.js';
+import { getData } from './getData.js';
+import { displayPopUp } from './popUp.js';
 import { shows, urlLikes } from './global.js';
 
 const mainSection = document.querySelector('main');
@@ -32,10 +33,11 @@ const loadArticles = async () => {
     const buttonComments = document.createElement('button');
     buttonComments.type = 'button';
     buttonComments.innerText = 'Comments';
+    buttonComments.classList.add('button-comments');
     articleTvMaze.appendChild(buttonComments);
-    // buttonComments.addEventListener('click', (e) => {
-    //   console.log(e.target.previousSibling.innerText);
-    // })
+    buttonComments.addEventListener('click', (e) => {
+      displayPopUp(parseInt(e.target.previousSibling.innerText, 10));
+    });
     mainSection.appendChild(articleTvMaze);
   });
 };
