@@ -7,4 +7,3 @@ loadArticles();
 document.addEventListener('click', (e) => {
   hidePopUp(e);
 });
-

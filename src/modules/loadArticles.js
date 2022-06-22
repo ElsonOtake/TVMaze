@@ -33,11 +33,11 @@ const loadArticles = async () => {
     const buttonComments = document.createElement('button');
     buttonComments.type = 'button';
     buttonComments.innerText = 'Comments';
-    button.classList.add('button-comments');
+    buttonComments.classList.add('button-comments');
     articleTvMaze.appendChild(buttonComments);
     buttonComments.addEventListener('click', (e) => {
       displayPopUp(parseInt(e.target.previousSibling.innerText, 10));
-    })
+    });
     mainSection.appendChild(articleTvMaze);
   });
 };

@@ -2,7 +2,7 @@ import { getDataById } from './getData.js';
 
 const popUpContainer = document.querySelector('.pop-up-container');
 const popUp = document.querySelector('.pop-up');
-const main = document.querySelector('.main')
+const main = document.querySelector('.main');
 
 const addHtml = (object) => `
   <div class="pop-up-header">
