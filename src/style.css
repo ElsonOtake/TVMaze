@@ -223,6 +223,46 @@ footer {
   margin-top: 25px;
 }
 
+
+
+/* COMMENTS FORM SECTION */
+
+.comments-header {
+  color:#ece05e;
+  margin: 24px 0px;
+}
+
+.comments-container {
+  background-color: #2d2e37;
+  max-height: 150px;
+  color:#8181b1 ;
+  overflow-y: scroll;
+}
+
+.comment {
+  margin: 10px 24px;
+  padding-bottom: 10px;
+  border-bottom: #ece05e 1px solid;
+}
+
+.comment-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-comments-header {
+  color:#ece05e;
+  margin: 24px 0px;
+}
+
+.comment-input{
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #2d2e37;
+  border: none;
+}
+
+
 @media (max-width: 710px) {
   #header-search-bar {
     max-width: 240px;
