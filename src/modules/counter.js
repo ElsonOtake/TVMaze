@@ -1,6 +1,6 @@
 const counter = (() => {
-  var count = 1;
-  return () => count++;
+  let count = 0;
+  return () => count += 1;
 })();
 
 export default counter;
