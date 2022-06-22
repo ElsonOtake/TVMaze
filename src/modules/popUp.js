@@ -33,9 +33,6 @@ const addHtml = (object) => `
   <section class="comments">
     <h1 class="comments-header">comments (0)</h1>
     <ul class="comments-container">
-      <li> 
-        <h3 class="comments"> No comments added jet, be the first one </h3> 
-      </li>
     </ul>
     <form class="comment-form">
       <p class="comment-p-tohide">${object.id}</p>
