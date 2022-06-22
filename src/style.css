@@ -272,10 +272,27 @@ footer {
 }
 
 .comment-input {
-  width: 100%;
+  width: 60%;
+  padding: 5px;
   margin-bottom: 20px;
   background-color: #2d2e37;
   border: none;
+}
+
+.comment-text-area {
+  width: 80%;
+  padding: 5px;
+  margin-bottom: 20px;
+  background-color: #2d2e37;
+  border: none;
+}
+
+.comment-submit {
+  width: 30%;
+  color: #ece05e;
+  background-color: #2d2e37;
+  border:none;
+  cursor: pointer;
 }
 
 @media (max-width: 710px) {
