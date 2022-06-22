@@ -27,6 +27,20 @@ const addHtml = (object) => `
     </div>
     ${object.summary}
   </div>
+
+  <section class="comments">
+    <h1 class="comments-header">comments (3)</h1>
+    <ul class="comments-container">
+      <li class="comment">this are some comments to test how it loos in the pop up of the web page ✔️</li>
+      <li class="comment">this are some comments to test how it loos in the pop up of the web page ✔️</li>
+      <li class="comment">this are some comments to test how it loos in the pop up of the web page ✔️</li>
+    </ul>
+    <form class="comment-form">
+      <h1 class="form-comments-header">Add a new comment</h1>
+      <input class="comment-input" type="text" placeholder="Enter your name...">
+      <textarea class="comment-text-area" name="comment" id="" cols="30" rows="10" placeholder="Enter your comment..."></textarea>
+    </form>
+  </section>
   
 `;
 
