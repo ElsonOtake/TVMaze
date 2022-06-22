@@ -23,9 +23,9 @@ const loadArticles = async () => {
       if (!e.target.classList.contains('active')) {
         e.target.classList.add('active');
         e.target.nextSibling.innerText = parseInt(e.target.nextSibling.innerText, 10) + 1;
-        await postData(urlLikes, { item_id: maze.id })
+        await postData(urlLikes, { item_id: maze.id });
       }
-    })
+    });
     const spanLikes = document.createElement('span');
     const numLikes = listLikes.filter((item) => item.item_id === maze.id);
     spanLikes.innerText = numLikes.length > 0 ? numLikes[0].likes : 0;
