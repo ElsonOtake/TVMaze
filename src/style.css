@@ -99,6 +99,8 @@ main button {
 }
 
 footer {
+  display: flex;
+  justify-content: space-between;
   padding: 1.5rem 10%;
   bottom: 0;
   position: fixed;
