@@ -1,6 +1,5 @@
 import getData from './getData.js';
 import { shows } from './global.js';
-import { deployData } from './postComments.js';
 
 const popUpContainer = document.querySelector('.pop-up-container');
 const popUp = document.querySelector('.pop-up');

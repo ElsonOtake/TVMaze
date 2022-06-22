@@ -11,9 +11,8 @@ document.addEventListener('click', (e) => {
   hidePopUp(e);
 });
 
-
-document.addEventListener('submit',(e)=> {
+document.addEventListener('submit', (e) => {
   e.preventDefault();
-  postData(posturlComments,getInputsComments(e))
-  updateCommentList(e)
-})
+  postData(posturlComments, getInputsComments(e));
+  updateCommentList(e);
+});

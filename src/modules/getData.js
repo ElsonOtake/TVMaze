@@ -1,4 +1,4 @@
-const getData = async (url, id='') => {
+const getData = async (url, id = '') => {
   try {
     const response = await fetch(url + id);
     const data = await response.json();
@@ -8,4 +8,4 @@ const getData = async (url, id='') => {
   }
 };
 
-export default getData
+export default getData;
