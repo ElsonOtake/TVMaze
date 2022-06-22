@@ -51,13 +51,13 @@ export const displayPopUp = async (id) => {
   popUpContainer.insertAdjacentHTML('afterbegin', addHtml(data));
   const genres = document.querySelector('.genres');
   data.genres.forEach((element) => { genres.innerHTML += `<li>${element}</li>`; });
-  main.style.position = 'fixed'
+  main.style.position = 'fixed';
 };
 
 export const hidePopUp = (e) => {
   if (e.target.classList.contains('pop-up-close') || e.target.classList.contains('pop-up')) {
     popUp.style.display = 'none';
-    main.style.position = 'static'
+    main.style.position = 'static';
   }
 };
 export default displayPopUp;
