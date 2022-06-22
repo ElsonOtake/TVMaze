@@ -252,6 +252,7 @@ footer {
   max-height: 150px;
   color: #8181b1;
   overflow-y: scroll;
+  min-height: 100px;
 }
 
 .comment {
