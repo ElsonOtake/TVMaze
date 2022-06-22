@@ -125,17 +125,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getData = async (url) => {\n  const response = await fetch(url);\n  const data = await response.json();\n  return data;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\n\n//# sourceURL=webpack://tvmaze/./src/modules/getData.js?");
 
-/***/ }),
-
-/***/ "./src/modules/global.js":
-/*!*******************************!*\
-  !*** ./src/modules/global.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"appId\": () => (/* binding */ appId),\n/* harmony export */   \"shows\": () => (/* binding */ shows),\n/* harmony export */   \"urlLikes\": () => (/* binding */ urlLikes),\n/* harmony export */   \"urlNewApp\": () => (/* binding */ urlNewApp)\n/* harmony export */ });\nconst shows = 'https://api.tvmaze.com/shows';\nconst appId = 'BiT8llHS4WoCPJWSTu18';\nconst urlNewApp = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';\nconst urlLikes = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`;\n\n\n//# sourceURL=webpack://tvmaze/./src/modules/global.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getData\": () => (/* binding */ getData),\n/* harmony export */   \"getDataById\": () => (/* binding */ getDataById)\n/* harmony export */ });\nlet shows = 'https://api.tvmaze.com/shows';\r\n\r\nconst getData = async () => { \r\n  const response = await fetch(shows); \r\n  const data = await response.json(); \r\n  return data \r\n}\r\n\r\n const getDataById = async (id) => {\r\n  shows = `https://api.tvmaze.com/shows/${id}`\r\n  const response = await fetch(shows); \r\n  const data = await response.json(); \r\n  return data\r\n}\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://tvmaze/./src/modules/getData.js?");
 
 /***/ }),
 
@@ -156,6 +147,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst postData = async (url, info = {}) => {\n  const response = await fetch(url, {\n    method: 'POST',\n    headers: {\n      'Content-type': 'application/json; charset=UTF-8',\n    },\n    body: JSON.stringify(info)\n    })\n  const data = await response.text();\n  return data;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postData);\n\n\n//# sourceURL=webpack://tvmaze/./src/modules/postData.js?");
+
 
 /***/ })
 
