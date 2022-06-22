@@ -1,12 +1,11 @@
-export const getData = async (url) => {
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
+const getData = async (url, id='') => {
+  try {
+    const response = await fetch(url + id);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    throw new Error(err);
+  }
 };
 
-export const getDataById = async (id) => {
-  const shows = `https://api.tvmaze.com/shows/${id}`;
-  const response = await fetch(shows);
-  const data = await response.json();
-  return data;
-};
+export default getData
