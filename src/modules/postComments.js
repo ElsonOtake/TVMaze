@@ -30,7 +30,7 @@ export const updateCommentList = (e) => {
   const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
   newComment.creation_date = date;
   const commentContainer = document.querySelector('.comments-container');
-  commentContainer.insertAdjacentHTML('beforeend', addhtml(newComment));
+  commentContainer.insertAdjacentHTML('afterbegin', addhtml(newComment));
   commentText.value = '';
   name.value = '';
 };
@@ -41,7 +41,7 @@ export const deployData = async (id) => {
   commentContainer.innerHTML = '';
   let countComments = 0;
   comments.forEach((element) => {
-    commentContainer.insertAdjacentHTML('beforeend', addhtml(element));
+    commentContainer.insertAdjacentHTML('afterbegin', addhtml(element));
     countComments += 1;
   });
   const commentsHeader = document.querySelector('.comments-header');
