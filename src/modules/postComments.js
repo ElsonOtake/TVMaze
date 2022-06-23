@@ -24,12 +24,15 @@ const addhtml = (object) => `
 
 export const updateCommentList = (e) => {
   const newComment = getInputsComments(e);
+  const commentText = document.querySelector('.comment-text-area');
+  const name = document.querySelector('.comment-input');
   const today = new Date();
   const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
   newComment.creation_date = date;
   const commentContainer = document.querySelector('.comments-container');
-  commentContainer.innerHTML = '';
   commentContainer.insertAdjacentHTML('beforeend', addhtml(newComment));
+  commentText.value = '';
+  name.value = '';
 };
 
 export const deployData = async (id) => {
@@ -39,4 +42,7 @@ export const deployData = async (id) => {
   comments.forEach((element) => {
     commentContainer.insertAdjacentHTML('beforeend', addhtml(element));
   });
+  const lengthOfComments = comments.length;
+  const commentsHeader = document.querySelector('.comments-header');
+  commentsHeader.innerText = `comments (${lengthOfComments})`;
 };
