@@ -54,7 +54,7 @@ const loadArticles = async () => {
     articleTvMaze.appendChild(buttonComments);
     buttonComments.addEventListener('click', (e) => {
       displayPopUp(parseInt(e.target.previousSibling.innerText, 10));
-      deployData(parseInt(e.target.previousSibling.innerText, 10));
+      // deployData(parseInt(e.target.previousSibling.innerText, 10));
     });
     mainSection.appendChild(articleTvMaze);
   });
