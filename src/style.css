@@ -58,7 +58,13 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 4rem 0;
+  margin: 3.5rem 0;
+  color: white;
+  background-image: url(./images/4b8a92b93fc6b6a5a91175fdc7692d3c.jpeg);
+}
+
+main.hide {
+  display: none;
 }
 
 main article {
@@ -66,6 +72,7 @@ main article {
   width: 24%;
   text-align: center;
   margin-top: 1rem;
+  background-color: rgb(0, 0, 0, 0.85);
 }
 
 main img {
@@ -100,6 +107,49 @@ main button {
   margin-top: 0.5rem;
 }
 
+.episodes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 4rem 0;
+  color: white;
+  background-image: url(./images/4b8a92b93fc6b6a5a91175fdc7692d3c.jpeg);
+}
+
+.episodes article {
+  padding: 1rem;
+  width: 24%;
+  text-align: center;
+  margin-top: 1rem;
+  background-color: rgb(0, 0, 0, 0.85);
+}
+
+.episodes img {
+  width: 95%;
+  height: auto;
+}
+
+.episodes div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 95%;
+  margin: 0.4rem auto;
+  gap: 0.4rem;
+}
+
+.episodes h2 {
+  padding: 1rem 0;
+  width: 95%;
+  margin: auto;
+}
+
+.episodes p {
+  text-align: left;
+  width: 95%;
+  margin: auto;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -110,6 +160,10 @@ footer {
   z-index: 2;
   background-color: #1e1e2a;
   color: #ece05e;
+}
+
+footer span:last-child.hide {
+  display: none;
 }
 
 #header-logo {
