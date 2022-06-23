@@ -161,7 +161,7 @@ main button {
 .episodes p {
   text-align: left;
   width: 95%;
-  margin: auto;
+  margin: 1rem auto;
 }
 
 footer {
