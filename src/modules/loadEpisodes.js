@@ -1,4 +1,4 @@
-import getData from './modules/getData.js';
+import getData from './getData.js';
 
 const loadEpisodes = async (id) => {
   const mainSection = document.querySelector('main');

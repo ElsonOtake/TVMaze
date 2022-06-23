@@ -3,7 +3,7 @@ import { displayPopUp } from './popUp.js';
 import { shows, urlLikes } from './global.js';
 import postData from './postData.js';
 import counter from './counter.js';
-import loadEpisodes from '../loadEpisodes.js';
+import loadEpisodes from './loadEpisodes.js';
 
 const mainSection = document.querySelector('main');
 let countShows;
