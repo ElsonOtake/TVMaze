@@ -17,4 +17,4 @@ logo.addEventListener('click', () => {
   mainSection.classList.remove('hide');
   footerCounter.classList.remove('hide');
   episodes.innerHTML = '';
-})
+});

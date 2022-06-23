@@ -21,7 +21,7 @@ const loadArticles = async () => {
     articleTvMaze.appendChild(imgShow);
     imgShow.addEventListener('click', () => {
       loadEpisodes(maze.id);
-    })
+    });
     const divLikes = document.createElement('div');
     const spanThumbUp = document.createElement('span');
     spanThumbUp.className = 'material-icons-outlined';

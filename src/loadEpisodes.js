@@ -1,7 +1,6 @@
-import getData from "./modules/getData";
+import getData from './modules/getData.js';
 
 const loadEpisodes = async (id) => {
-  console.log('click episodes')
   const mainSection = document.querySelector('main');
   mainSection.classList.add('hide');
   const footerCounter = document.querySelector('footer span:last-child');
@@ -10,9 +9,7 @@ const loadEpisodes = async (id) => {
   const urlEpisodes = `https://api.tvmaze.com/shows/${id}/episodes`;
   episodes.innerHTML = '';
   const data = await getData(urlEpisodes);
-  console.log(data);
   data.forEach((episode) => {
-    console.log(episode.name);
     const articleEpisode = document.createElement('article');
     const imgShow = document.createElement('img');
     imgShow.src = episode.image.medium;
@@ -57,6 +54,6 @@ const loadEpisodes = async (id) => {
     articleEpisode.appendChild(pSummary);
     episodes.appendChild(articleEpisode);
   });
-}
+};
 
 export default loadEpisodes;
