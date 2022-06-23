@@ -3,6 +3,7 @@ import { displayPopUp } from './popUp.js';
 import { shows, urlLikes } from './global.js';
 import postData from './postData.js';
 import counter from './counter.js';
+import loadEpisodes from '../loadEpisodes.js';
 
 const mainSection = document.querySelector('main');
 let countShows;
@@ -18,6 +19,9 @@ const loadArticles = async () => {
     imgShow.src = maze.image.medium;
     imgShow.alt = maze.name;
     articleTvMaze.appendChild(imgShow);
+    imgShow.addEventListener('click', () => {
+      loadEpisodes(maze.id);
+    })
     const divLikes = document.createElement('div');
     const spanThumbUp = document.createElement('span');
     spanThumbUp.className = 'material-icons-outlined';
