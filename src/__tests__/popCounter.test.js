@@ -1,6 +1,5 @@
 describe('Test of deployData counter function', () => {
-
-  document.body.innerHTML=` <div class="pop-up-container">
+  document.body.innerHTML = ` <div class="pop-up-container">
   <div class="pop-up-header">
     <h1 class="pop-up-title">Person of Interest</h1>
     <span class="material-icons pop-up-close">close</span>
@@ -65,18 +64,18 @@ describe('Test of deployData counter function', () => {
       <button type="submit" class="comment-submit">Click to submit</button>
     </form>
   </section>
-  </div>` 
-  
-  let getData; 
-  
-   const addhtml = (object) => `
+  </div>`;
+
+  let getData;
+
+  const addhtml = (object) => `
    <li class="comment"> 
      <h2><span>${object.creation_date}</span> ${object.username}</h2> 
      <h5>${object.comment}</h5>
    </li>
   `;
-  
-  const deployData = (id) => {
+
+  const deployData = () => {
     const comments = getData;
     const commentContainer = document.querySelector('.comments-container');
     commentContainer.innerHTML = '';
@@ -88,34 +87,42 @@ describe('Test of deployData counter function', () => {
     const commentsHeader = document.querySelector('.comments-header');
     commentsHeader.innerHTML = `comments (${countComments})`;
   };
-  
+
   const commentsHeader = document.querySelector('.comments-header');
 
-
-
   test('The value of the first call must be comments (1)', () => {
-    getData = [ {username: 'Julia ', 
-    comment: 'You are being watched. The government has a secret…ry hour of every day. I know because I built it. ', 
-    creation_date: '2022-06-22'}
+    getData = [{
+      username: 'Julia ',
+      comment: 'You are being watched. The government has a secret…ry hour of every day. I know because I built it. ',
+      creation_date: '2022-06-22',
+    },
     ];
-    deployData(2);
-    expect(commentsHeader.innerHTML).toBe('comments (1)')});
-  test('The value of the first call must be comments (2)', () => {
-    getData = [ {username: 'Julia ', 
-    comment: 'You are being watched. The government has a secret…ry hour of every day. I know because I built it. ', 
-    creation_date: '2022-06-22'},
-    {username: 'paco', creation_date: '2022-06-22', 
-    comment: "Hunted by the authorities, we work in secret. You'…erpetrator, if your number is up, we'll find you."},
-    ];
-    deployData(2);
-    expect(commentsHeader.innerHTML).toBe('comments (2)')});
-  test('The value of the first call must be comments (6)', () => {
-    getData = [ {username: 'Julia ', comment: 'You are being watched. The government has a secret…ry hour of every day. I know because I built it. ', creation_date: '2022-06-22'},
-    {username: 'paco', creation_date: '2022-06-22', comment: "Hunted by the authorities, we work in secret. You'…erpetrator, if your number is up, we'll find you."},
-    {creation_date: '2022-06-22', comment: 'sdfsdf\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', username: 'sdf'},
-    {creation_date: '2022-06-23', username: 'Andres', comment: "People like you. Crimes the government considered …erpetrator, if your number is up, we'll find you."},
-    {creation_date: '2022-06-23', username: 'Andres', comment: 'enter your comment'},
-    {username: 'Elson', comment: 'Another comment', creation_date: '2022-06-23'} ];
-    deployData(2);
-    expect(commentsHeader.innerHTML).toBe('comments (6)')});
+    deployData();
+    expect(commentsHeader.innerHTML).toBe('comments (1)');
   });
+  test('The value of the first call must be comments (2)', () => {
+    getData = [{
+      username: 'Julia ',
+      comment: 'You are being watched. The government has a secret…ry hour of every day. I know because I built it. ',
+      creation_date: '2022-06-22',
+    },
+    {
+      username: 'paco',
+      creation_date: '2022-06-22',
+      comment: "Hunted by the authorities, we work in secret. You'…erpetrator, if your number is up, we'll find you.",
+    },
+    ];
+    deployData();
+    expect(commentsHeader.innerHTML).toBe('comments (2)');
+  });
+  test('The value of the first call must be comments (6)', () => {
+    getData = [{ username: 'Julia ', comment: 'You are being watched. The government has a secret…ry hour of every day. I know because I built it. ', creation_date: '2022-06-22' },
+      { username: 'paco', creation_date: '2022-06-22', comment: "Hunted by the authorities, we work in secret. You'…erpetrator, if your number is up, we'll find you." },
+      { creation_date: '2022-06-22', comment: 'sdfsdf\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', username: 'sdf' },
+      { creation_date: '2022-06-23', username: 'Andres', comment: "People like you. Crimes the government considered …erpetrator, if your number is up, we'll find you." },
+      { creation_date: '2022-06-23', username: 'Andres', comment: 'enter your comment' },
+      { username: 'Elson', comment: 'Another comment', creation_date: '2022-06-23' }];
+    deployData();
+    expect(commentsHeader.innerHTML).toBe('comments (6)');
+  });
+});
