@@ -9,7 +9,6 @@ body {
   background-image: url(./images/4b8a92b93fc6b6a5a91175fdc7692d3c.jpeg);
 }
 
-
 a {
   text-decoration: none;
 }
@@ -174,6 +173,7 @@ footer {
   z-index: 2;
   background-color: #1e1e2a;
   color: #ece05e;
+  font-size: 1.5rem;
 }
 
 footer span:last-child.hide {
@@ -326,6 +326,7 @@ footer span:last-child.hide {
   margin-bottom: 20px;
   background-color: #2d2e37;
   border: none;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .comments-header {

@@ -39,10 +39,11 @@ export const deployData = async (id) => {
   const comments = await getData(urlComments, id);
   const commentContainer = document.querySelector('.comments-container');
   commentContainer.innerHTML = '';
+  let countComments = 0;
   comments.forEach((element) => {
     commentContainer.insertAdjacentHTML('beforeend', addhtml(element));
+    countComments += 1;
   });
-  const lengthOfComments = comments.length;
   const commentsHeader = document.querySelector('.comments-header');
-  commentsHeader.innerText = `comments (${lengthOfComments})`;
+  commentsHeader.innerText = `comments (${countComments})`;
 };
