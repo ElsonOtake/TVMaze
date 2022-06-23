@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose --env=jsdom",
     "start": "webpack serve --open",
     "build": "webpack"
   },
@@ -41,6 +41,7 @@
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
+    "jest-environment-jsdom": "^28.1.1",
     "lodash": "^4.17.21"
   }
 }
