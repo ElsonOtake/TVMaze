@@ -1,4 +1,4 @@
-const { default: counter } = require('../modules/counter.js');
+const { counter } = require('../modules/counter.js');
 
 describe('Test of counter function', () => {
   test('The value of the first call must be 1', () => {
