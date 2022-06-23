@@ -41,7 +41,6 @@ const addHtml = (object) => `
       <button type="submit" class="comment-submit">Click to submit</button>
     </form>
   </section>
-  
 `;
 
 export const displayPopUp = async (id) => {
