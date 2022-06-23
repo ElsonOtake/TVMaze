@@ -30,19 +30,17 @@ const addHtml = (object) => `
   </div>
 
   <section class="comments">
-    <h1 class="comments-header">comments (3)</h1>
+    <h1 class="comments-header">comments (0)</h1>
     <ul class="comments-container">
-      <li class="comment">this are some comments to test how it loos in the pop up of the web page ✔️</li>
-      <li class="comment">this are some comments to test how it loos in the pop up of the web page ✔️</li>
-      <li class="comment">this are some comments to test how it loos in the pop up of the web page ✔️</li>
     </ul>
     <form class="comment-form">
+      <p class="comment-p-tohide">${object.id}</p>
       <h1 class="form-comments-header">Add a new comment</h1>
-      <input class="comment-input" type="text" placeholder="Enter your name...">
-      <textarea class="comment-text-area" name="comment" id="" cols="30" rows="10" placeholder="Enter your comment..."></textarea>
+      <input class="comment-input" type="text" placeholder="Enter your name..." required>
+      <textarea class="comment-text-area" name="comment" id="" cols="30" rows="7" placeholder="Enter your comment..." required></textarea>
+      <button type="submit" class="comment-submit">submit</button>
     </form>
   </section>
-  
 `;
 
 export const displayPopUp = async (id) => {

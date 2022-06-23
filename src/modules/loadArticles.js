@@ -3,6 +3,7 @@ import { displayPopUp } from './popUp.js';
 import { shows, urlLikes } from './global.js';
 import postData from './postData.js';
 import counter from './counter.js';
+import { deployData } from './postComments.js';
 
 const mainSection = document.querySelector('main');
 let countShows;
@@ -18,6 +19,7 @@ const loadArticles = async () => {
     imgShow.src = maze.image.medium;
     imgShow.alt = maze.name;
     articleTvMaze.appendChild(imgShow);
+    articleTvMaze.id = maze.id;
     const divLikes = document.createElement('div');
     const spanThumbUp = document.createElement('span');
     spanThumbUp.className = 'material-icons-outlined';
@@ -48,6 +50,11 @@ const loadArticles = async () => {
     articleTvMaze.appendChild(buttonComments);
     buttonComments.addEventListener('click', (e) => {
       displayPopUp(parseInt(e.target.previousSibling.innerText, 10));
+      deployData(parseInt(e.target.previousSibling.innerText, 10));
+    });
+    imgShow.addEventListener('click', (e) => {
+      displayPopUp(e.target.parentNode.id);
+      deployData(e.target.parentNode.id);
     });
     mainSection.appendChild(articleTvMaze);
   });

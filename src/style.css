@@ -240,6 +240,24 @@ footer {
 
 /* COMMENTS FORM SECTION */
 
+.comment-p-tohide {
+  display: none;
+}
+
+.comment-input[type="text"] {
+  color: #ececef;
+}
+
+.comment-text-area {
+  color: #ececef;
+  resize: none;
+  width: 80%;
+  padding: 5px;
+  margin-bottom: 20px;
+  background-color: #2d2e37;
+  border: none;
+}
+
 .comments-header {
   color: #ece05e;
   margin: 24px 0;
@@ -250,6 +268,7 @@ footer {
   max-height: 150px;
   color: #8181b1;
   overflow-y: scroll;
+  min-height: 100px;
 }
 
 .comment {
@@ -269,10 +288,19 @@ footer {
 }
 
 .comment-input {
-  width: 100%;
+  width: 60%;
+  padding: 5px;
   margin-bottom: 20px;
   background-color: #2d2e37;
   border: none;
+}
+
+.comment-submit {
+  width: 30%;
+  color: #ece05e;
+  background-color: #2d2e37;
+  border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 710px) {
