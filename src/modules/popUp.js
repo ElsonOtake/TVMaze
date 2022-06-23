@@ -1,6 +1,5 @@
 import getData from './getData.js';
 import { shows } from './global.js';
-import { deployData } from './postComments.js';
 
 const popUpContainer = document.querySelector('.pop-up-container');
 const popUp = document.querySelector('.pop-up');
@@ -37,12 +36,11 @@ const addHtml = (object) => `
     <form class="comment-form">
       <p class="comment-p-tohide">${object.id}</p>
       <h1 class="form-comments-header">Add a new comment</h1>
-      <input class="comment-input" type="text" placeholder="Enter your name...">
-      <textarea class="comment-text-area" name="comment" id="" cols="30" rows="10" placeholder="Enter your comment..."></textarea>
-      <button type="submit">submit</button>
+      <input class="comment-input" type="text" placeholder="Enter your name..." required>
+      <textarea class="comment-text-area" name="comment" id="" cols="30" rows="7" placeholder="Enter your comment..." required></textarea>
+      <button type="submit" class="comment-submit">submit</button>
     </form>
   </section>
-  
 `;
 
 export const displayPopUp = async (id) => {

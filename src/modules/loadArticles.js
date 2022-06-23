@@ -16,7 +16,7 @@ const loadArticles = async () => {
     imgShow.src = maze.image.medium;
     imgShow.alt = maze.name;
     articleTvMaze.appendChild(imgShow);
-    articleTvMaze.id=maze.id
+    articleTvMaze.id = maze.id;
     const divLikes = document.createElement('div');
     const spanThumbUp = document.createElement('span');
     spanThumbUp.className = 'material-icons-outlined';
@@ -49,10 +49,10 @@ const loadArticles = async () => {
       displayPopUp(parseInt(e.target.previousSibling.innerText, 10));
       deployData(parseInt(e.target.previousSibling.innerText, 10));
     });
-    imgShow.addEventListener('click',(e)=> {
-      displayPopUp(parseInt(e.target.parentNode.id))
-      deployData(parseInt(e.target.parentNode.id))
-    })
+    imgShow.addEventListener('click', (e) => {
+      displayPopUp(e.target.parentNode.id);
+      deployData(e.target.parentNode.id);
+    });
     mainSection.appendChild(articleTvMaze);
   });
 };
