@@ -1,4 +1,3 @@
-
 export const countComments = (e) => {
   if (e.target.classList.contains('comment-form')) {
     const commentsContainer = document.querySelector('.comments-container');

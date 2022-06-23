@@ -2,7 +2,7 @@ import getData from './getData.js';
 import { displayPopUp } from './popUp.js';
 import { shows, urlLikes } from './global.js';
 import postData from './postData.js';
-import counter from './counter.js';
+import { counter } from './counter.js';
 import { deployData } from './postComments.js';
 
 const mainSection = document.querySelector('main');

@@ -1,4 +1,4 @@
-import countComments from './modules/counter.js';
+import { countComments } from './modules/counter.js';
 import { posturlComments } from './modules/global.js';
 import loadArticles from './modules/loadArticles.js';
 import { hidePopUp } from './modules/popUp.js';
