@@ -58,7 +58,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 60px;
+  margin: 4rem 0;
 }
 
 main article {
@@ -69,7 +69,7 @@ main article {
 }
 
 main img {
-  width: 90%;
+  width: 95%;
   height: auto;
 }
 
@@ -77,8 +77,8 @@ main div {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 90%;
-  margin: auto;
+  width: 95%;
+  margin: 0.4rem auto;
   gap: 0.4rem;
 }
 
@@ -88,6 +88,7 @@ main div span:first-child.active {
 
 main h2 {
   padding: 1rem 0;
+  width: 95%;
 }
 
 main p {
@@ -96,6 +97,7 @@ main p {
 
 main button {
   padding: 0.6rem 1.2rem;
+  margin-top: 0.5rem;
 }
 
 footer {
