@@ -242,6 +242,15 @@ footer {
   display: none;
 }
 
+.comment-input[type="text"] {
+  color: #ececef;
+}
+
+.comment-text-area {
+  color: #ececef;
+  resize: none;
+}
+
 .comments-header {
   color: #ece05e;
   margin: 24px 0;
