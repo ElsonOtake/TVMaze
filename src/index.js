@@ -15,6 +15,6 @@ document.addEventListener('click', (e) => {
 
 logo.addEventListener('click', () => {
   mainSection.classList.remove('hide');
-  footerCounter.classList.remore('hide');
+  footerCounter.classList.remove('hide');
   episodes.innerHTML = '';
 })
