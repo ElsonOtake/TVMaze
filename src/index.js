@@ -6,6 +6,11 @@ import { getInputsComments, updateCommentList } from './modules/postComments.js'
 import postData from './modules/postData.js';
 import './style.css';
 
+const logo = document.querySelector('header a');
+const mainSection = document.querySelector('main');
+const episodes = document.querySelector('.episodes');
+const footerCounter = document.querySelector('footer span:last-child');
+
 loadArticles();
 
 document.addEventListener('click', (e) => {
@@ -17,4 +22,10 @@ document.addEventListener('submit', (e) => {
   postData(posturlComments, getInputsComments(e));
   updateCommentList(e);
   countComments(e);
+});
+
+logo.addEventListener('click', () => {
+  mainSection.classList.remove('hide');
+  footerCounter.classList.remove('hide');
+  episodes.innerHTML = '';
 });

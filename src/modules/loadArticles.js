@@ -4,6 +4,7 @@ import { shows, urlLikes } from './global.js';
 import postData from './postData.js';
 import { counter } from './counter.js';
 import { deployData } from './postComments.js';
+import loadEpisodes from './loadEpisodes.js';
 
 const mainSection = document.querySelector('main');
 let countShows;
@@ -20,6 +21,9 @@ const loadArticles = async () => {
     imgShow.alt = maze.name;
     articleTvMaze.appendChild(imgShow);
     articleTvMaze.id = maze.id;
+    imgShow.addEventListener('click', () => {
+      loadEpisodes(maze.id);
+    });
     const divLikes = document.createElement('div');
     const spanThumbUp = document.createElement('span');
     spanThumbUp.className = 'material-icons-outlined';
@@ -51,10 +55,6 @@ const loadArticles = async () => {
     buttonComments.addEventListener('click', (e) => {
       displayPopUp(parseInt(e.target.previousSibling.innerText, 10));
       deployData(parseInt(e.target.previousSibling.innerText, 10));
-    });
-    imgShow.addEventListener('click', (e) => {
-      displayPopUp(e.target.parentNode.id);
-      deployData(e.target.parentNode.id);
     });
     mainSection.appendChild(articleTvMaze);
   });
