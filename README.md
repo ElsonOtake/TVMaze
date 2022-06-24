@@ -1,7 +1,7 @@
 # TV Maze
 
 >The JavaScript capstone project is a web application based on an external API about TV series and movies. 
-This project were developed using ES6 and Webpack. We use the Kanban board with GitHub project that translates the requirements into a set of tasks to organize our work. The counter functionality was tested using jest library. We follow Gitflow and solved the conflicts in our code. Perform code reviews for our partner's code. Created dynamically the homepage, the popup and the list of episodes contents. Use of Involvement API to treat user's comments and likes. 
+This project was developed using ES6 and Webpack. We use the Kanban board with a GitHub project that translates the requirements into a set of tasks to organize our work. The counter functionality was tested using the jest library. We follow Gitflow and solved the conflicts in our code. Perform code reviews for our partner's code. Created dynamically the homepage, the popup, and the list of episode contents. Use of Involvement API to treat users' comments and likes. 
 
 
 ## Built With
@@ -16,7 +16,6 @@ This project were developed using ES6 and Webpack. We use the Kanban board with 
 
 
 ## Live Demo (if available)
-
 
 [Video of project](https://drive.google.com/file/d/1UwEtC5ViJGbmrAZgBcfgQOLp0rIbuxcp/view?usp=sharing)
 [Live Demo Link](https://elsonotake.github.io/TVMaze/dist/)
