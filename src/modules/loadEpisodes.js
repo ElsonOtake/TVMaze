@@ -2,7 +2,7 @@ import { counter } from './counter.js';
 import getData from './getData.js';
 
 const loadEpisodes = async (id) => {
-  let countShows;
+  let countShows = -1;
   let startCounter = 0;
   const mainSection = document.querySelector('main');
   mainSection.classList.add('hide');
