@@ -10,14 +10,23 @@ const logo = document.querySelector('header a');
 const mainSection = document.querySelector('main');
 const episodes = document.querySelector('.episodes');
 const footerCounter = document.querySelector('footer span:last-child');
+const searchForm  = document.querySelector('#header-search-bar')
+const inputSearch=document.querySelector('#header-search')
+const popUpContainer = document.querySelector('.pop-up-container');
 
-loadArticles('the');
+searchForm.addEventListener('submit',(e)=>{ 
+  e.preventDefault();
+  mainSection.innerHTML = '';
+  loadArticles(inputSearch.value);
+})
+
+loadArticles();
 
 document.addEventListener('click', (e) => {
   hidePopUp(e);
 });
 
-document.addEventListener('submit', (e) => {
+popUpContainer.addEventListener('submit', (e) => {
   e.preventDefault();
   postData(posturlComments, getInputsComments(e));
   updateCommentList(e);

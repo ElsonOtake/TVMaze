@@ -16,7 +16,6 @@ const loadArticles = async (query = '') => {
     data = await getData(showsQuery, query);
   } else {
     data = await getData(shows);
-    console.log(data);
   }
   const listLikes = await getData(urlLikes);
 
