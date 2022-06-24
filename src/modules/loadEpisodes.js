@@ -36,8 +36,8 @@ const loadEpisodes = async (id) => {
   });
   const data = await getData(urlEpisodes);
   data.forEach((episode) => {
-    if (episode.airdate && episode.name && episode.image && episode.summary && 
-      episode.rating && episode.season && episode.number) {
+    if (episode.airdate && episode.name && episode.image && episode.summary
+      && episode.rating && episode.season && episode.number) {
       countShows = counter();
       if (startCounter === 0) {
         startCounter = countShows;

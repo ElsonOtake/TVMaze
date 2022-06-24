@@ -6,7 +6,6 @@ import { getInputsComments, updateCommentList } from './modules/postComments.js'
 import postData from './modules/postData.js';
 import './style.css';
 
-const mainSection = document.querySelector('main');
 const episodes = document.querySelector('.episodes');
 const searchForm = document.querySelector('#header-search-bar');
 const inputSearch = document.querySelector('#header-search');
