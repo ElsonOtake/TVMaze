@@ -17,10 +17,9 @@ const popUpContainer = document.querySelector('.pop-up-container');
 searchForm.addEventListener('submit',(e)=>{ 
   e.preventDefault();
   mainSection.innerHTML = '';
+  episodes.innerHTML = '';
   loadArticles(inputSearch.value);
 })
-
-loadArticles();
 
 document.addEventListener('click', (e) => {
   hidePopUp(e);
@@ -33,8 +32,4 @@ popUpContainer.addEventListener('submit', (e) => {
   countComments(e);
 });
 
-logo.addEventListener('click', () => {
-  mainSection.classList.remove('hide');
-  footerCounter.classList.remove('hide');
-  episodes.innerHTML = '';
-});
+loadArticles();
