@@ -39,6 +39,11 @@ header {
   margin: auto;
 }
 
+#header-series.hide,
+#header-episodes.hide {
+  display: none;
+}
+
 #header-search-bar {
   display: flex;
   align-items: center;
@@ -87,13 +92,20 @@ main img {
   cursor: pointer;
 }
 
-main div {
+main .likes {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 95%;
   margin: 0.4rem auto;
   gap: 0.4rem;
+}
+
+main .buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+  margin: 0.4rem auto;
 }
 
 main div span:first-child.active {
@@ -117,6 +129,10 @@ main button {
   padding: 0.6rem 1.2rem;
   margin-top: 0.5rem;
   cursor: pointer;
+}
+
+main button:hover {
+  background-color: #bbb;
 }
 
 .episodes {
@@ -178,12 +194,24 @@ footer {
   font-size: 1.5rem;
 }
 
-footer span:last-child.hide {
+footer .seriesCounter.hide {
+  display: none;
+}
+
+footer .episodesCounter.hide {
   display: none;
 }
 
 #header-logo {
   font-size: 1.4rem;
+  color: #ece05e;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#header-series,
+#header-episodes {
+  font-size: 1rem;
   color: #ece05e;
   font-weight: 600;
   text-transform: uppercase;

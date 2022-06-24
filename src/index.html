@@ -13,11 +13,11 @@
 <body>
   <header>
     <div id="header-container">
-      <a href="#" id="header-logo">
-        Awesome Series 
-      </a> 
+      <a href="#" id="header-logo"></a>
+      <a href="#" class="hide" id="header-series">Back to series</a>
+      <a href="#" class="hide" id="header-episodes">Back to series</a>
       <form id="header-search-bar">
-        <input type="search" name="search" id="header-search" placeholder="Type your favorite series...">
+        <input type="search" name="search" id="header-search" placeholder="Type your favorite series..." required>
         <button type="submit" class="submit">
           <span class="material-icons header-search-icon">
             search
@@ -37,7 +37,8 @@
   </div>
   <footer>
     <span>&copy; Created by Microverse under CC licence</span>
-    <span></span>
+    <span class="seriesCounter"></span>
+    <span class="episodesCounter hide"></span>
   </footer>
 </body>
 </html>
