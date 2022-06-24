@@ -11,7 +11,7 @@ const mainSection = document.querySelector('main');
 const episodes = document.querySelector('.episodes');
 const footerCounter = document.querySelector('footer span:last-child');
 
-loadArticles();
+loadArticles('the');
 
 document.addEventListener('click', (e) => {
   hidePopUp(e);
