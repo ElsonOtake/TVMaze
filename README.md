@@ -18,6 +18,7 @@ This project was developed using ES6 and Webpack. We use the Kanban board with a
 ## Live Demo (if available)
 
 [Video of project](https://drive.google.com/file/d/1UwEtC5ViJGbmrAZgBcfgQOLp0rIbuxcp/view?usp=sharing)
+
 [Live Demo Link](https://elsonotake.github.io/TVMaze/dist/)
 
 
