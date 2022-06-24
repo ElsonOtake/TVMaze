@@ -16,18 +16,28 @@ const loadEpisodes = async (id) => {
   const headerLogo = document.getElementById('header-logo');
   const headerLogoPrevious = headerLogo.innerHTML;
   headerLogo.innerHTML = 'Awesome Series Episodes';
-  const headerReturn = document.getElementById('header-return');
-  headerReturn.innerHTML = 'Series';
-  headerReturn.addEventListener('click', () => {
+  const headerReturnSeries = document.getElementById('header-series');
+  const headerReturnEpisodes = document.getElementById('header-episodes');
+  headerReturnEpisodes.classList.remove('hide');
+  headerReturnSeries.classList.add('hide');
+  headerReturnEpisodes.addEventListener('click', () => {
     mainSection.classList.remove('hide');
     seriesCounter.classList.remove('hide');
     episodesCounter.classList.add('hide');
     headerLogo.innerHTML = headerLogoPrevious;
+    if (headerLogoPrevious === 'Awesome Series') {
+      headerReturnEpisodes.classList.add('hide');
+      headerReturnSeries.classList.add('hide');
+    } else {
+      headerReturnEpisodes.classList.add('hide');
+      headerReturnSeries.classList.remove('hide');
+    }
     episodes.innerHTML = '';
   });
   const data = await getData(urlEpisodes);
   data.forEach((episode) => {
-    if (episode.airdate && episode.name && episode.image && episode.summary && episode.rating && episode.season && episode.number) {
+    if (episode.airdate && episode.name && episode.image && episode.summary && 
+      episode.rating && episode.season && episode.number) {
       countShows = counter();
       if (startCounter === 0) {
         startCounter = countShows;
@@ -59,8 +69,9 @@ const loadEpisodes = async (id) => {
       pSummary.innerHTML = episode.summary.substr(3, episode.summary.length - 7);
       articleEpisode.appendChild(pSummary);
       episodes.appendChild(articleEpisode);
-    }});
-    episodesCounter.innerText = `Total : ${countShows - startCounter + 1}`;  
+    }
+  });
+  episodesCounter.innerText = `Total : ${countShows - startCounter + 1}`;
 };
 
 export default loadEpisodes;

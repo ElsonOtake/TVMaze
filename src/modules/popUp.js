@@ -44,6 +44,7 @@ const addHtml = (object) => `
 `;
 
 export const displayPopUp = async (id) => {
+  console.log('the id number is ', id);
   popUpContainer.innerHTML = '';
   const data = await getData(`${shows}/`, id);
   popUp.style.display = 'flex';

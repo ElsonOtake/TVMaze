@@ -39,6 +39,10 @@ header {
   margin: auto;
 }
 
+#header-series.hide, #header-episodes.hide {
+  display: none;
+}
+
 #header-search-bar {
   display: flex;
   align-items: center;
@@ -204,7 +208,7 @@ footer .episodesCounter.hide {
   text-transform: uppercase;
 }
 
-#header-return {
+#header-series, #header-episodes {
   font-size: 1rem;
   color: #ece05e;
   font-weight: 600;

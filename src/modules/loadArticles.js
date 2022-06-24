@@ -8,10 +8,8 @@ import loadEpisodes from './loadEpisodes.js';
 
 const mainSection = document.querySelector('main');
 const headerLogo = document.getElementById('header-logo');
-const headerReturn = document.getElementById('header-return');
-headerReturn.addEventListener('click', () => {
-  loadArticles();
-})
+const headerReturnSeries = document.getElementById('header-series');
+const headerReturnEpisodes = document.getElementById('header-episodes');
 
 const loadArticles = async (query = '') => {
   let countShows;
@@ -20,17 +18,18 @@ const loadArticles = async (query = '') => {
   if (query !== '') {
     data = await getData(showsQuery, query);
     headerLogo.innerHTML = 'Awesome Series by keyword';
-    headerReturn.innerHTML = 'All series';
+    headerReturnSeries.classList.remove('hide');
+    headerReturnEpisodes.classList.add('hide');
   } else {
     data = await getData(shows);
     headerLogo.innerHTML = 'Awesome Series';
-    headerReturn.innerHTML = '';
+    headerReturnSeries.classList.add('hide');
+    headerReturnEpisodes.classList.add('hide');
   }
   const listLikes = await getData(urlLikes);
   mainSection.innerHTML = '';
   mainSection.classList.remove('hide');
   data.forEach((maze) => {
-    
     if (maze.show) {
       maze = maze.show;
     }
@@ -66,9 +65,6 @@ const loadArticles = async (query = '') => {
       const h2Name = document.createElement('h2');
       h2Name.innerText = maze.name;
       articleTvMaze.appendChild(h2Name);
-      const pId = document.createElement('p');
-      pId.innerText = maze.id;
-      articleTvMaze.appendChild(pId);
       const divButton = document.createElement('div');
       divButton.className = 'buttons';
       const buttonEpisodes = document.createElement('button');
@@ -79,6 +75,9 @@ const loadArticles = async (query = '') => {
         loadEpisodes(maze.id);
       });
       divButton.appendChild(buttonEpisodes);
+      const pId = document.createElement('p');
+      pId.innerText = maze.id;
+      divButton.appendChild(pId);
       const buttonComments = document.createElement('button');
       buttonComments.type = 'button';
       buttonComments.innerText = 'Comments';
@@ -91,10 +90,15 @@ const loadArticles = async (query = '') => {
       });
       mainSection.appendChild(articleTvMaze);
     }
-
   });
   const spanTotal = document.querySelector('.seriesCounter');
   spanTotal.innerText = `Total : ${countShows - startCounter + 1}`;
 };
+
+headerReturnSeries.addEventListener('click', () => {
+  headerReturnSeries.classList.add('hide');
+  headerReturnEpisodes.classList.add('hide');
+  loadArticles();
+});
 
 export default loadArticles;
