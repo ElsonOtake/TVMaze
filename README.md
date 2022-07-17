@@ -17,9 +17,9 @@ This project was developed using ES6 and Webpack. We use the Kanban board with a
 
 ## Live Demo (if available)
 
-[Video of project](https://drive.google.com/file/d/1UwEtC5ViJGbmrAZgBcfgQOLp0rIbuxcp/view?usp=sharing)
+[Project video](https://drive.google.com/file/d/1UwEtC5ViJGbmrAZgBcfgQOLp0rIbuxcp/view?usp=sharing)
 
-[Live Demo Link](https://elsonotake.github.io/TVMaze/dist/)
+[Live Demo](https://elsonotake.github.io/TVMaze/dist/)
 
 
 ## Getting Started
@@ -69,7 +69,7 @@ Cloning a repository
 
 - GitHub: [@elsonotake](https://github.com/elsonotake)
 - Twitter: [@elsonotake](https://twitter.com/elsonotake)
-- LinkedIn: [Elson Otake](https://linkedin.com/in/elson-otake-0b5b9138)
+- LinkedIn: [elsonotake](https://linkedin.com/in/elsonotake)
 
 
 ## 🤝 Contributing
@@ -93,4 +93,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](https://github.com/ElsonOtake/) licensed.
