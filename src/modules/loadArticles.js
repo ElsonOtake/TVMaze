@@ -1,32 +1,49 @@
 import getData from './getData.js';
 import { displayPopUp } from './popUp.js';
-import { shows, showsQuery, urlLikes } from './global.js';
-import postData from './postData.js';
-import { counter } from './counter.js';
+import { shows, showsQuery } from './global.js';
+import { getLikes, addLike } from './involvement.js';
 import { deployData } from './postComments.js';
 import loadEpisodes from './loadEpisodes.js';
+import showMessage from './showMessage.js';
 
 const mainSection = document.querySelector('main');
 const headerLogo = document.getElementById('header-logo');
 const headerReturnSeries = document.getElementById('header-series');
 const headerReturnEpisodes = document.getElementById('header-episodes');
+let latestRequest = 0;
 
 const loadArticles = async (query = '') => {
-  let countShows;
+  latestRequest += 1;
+  const request = latestRequest;
+  query = query.trim();
+  let countShows = 0;
   let data;
-  let startCounter = 0;
+  const spanTotal = document.querySelector('.seriesCounter');
+  spanTotal.classList.remove('hide');
+  spanTotal.innerText = 'Total : 0';
+  document.querySelector('.episodesCounter').classList.add('hide');
+  document.querySelector('.episodes').innerHTML = '';
+  mainSection.classList.remove('hide');
+  showMessage(mainSection, 'Loading series…');
   if (query !== '') {
-    data = await getData(showsQuery, query);
     headerLogo.innerHTML = 'Awesome Series by keyword';
     headerReturnSeries.classList.remove('hide');
     headerReturnEpisodes.classList.add('hide');
   } else {
-    data = await getData(shows);
     headerLogo.innerHTML = 'Awesome Series';
     headerReturnSeries.classList.add('hide');
     headerReturnEpisodes.classList.add('hide');
   }
-  const listLikes = await getData(urlLikes);
+  try {
+    data = await getData(query ? showsQuery : shows, query);
+    if (!Array.isArray(data)) throw new Error('Unexpected series response');
+  } catch (error) {
+    if (request === latestRequest) {
+      showMessage(mainSection, 'Unable to load series. Check your connection and try searching again.');
+    }
+    return;
+  }
+  if (request !== latestRequest) return;
   mainSection.innerHTML = '';
   mainSection.classList.remove('hide');
   data.forEach((maze) => {
@@ -34,10 +51,7 @@ const loadArticles = async (query = '') => {
       maze = maze.show;
     }
     if (maze.id && maze.name && maze.image && maze.status && maze.rating && maze.genres) {
-      countShows = counter();
-      if (startCounter === 0) {
-        startCounter = countShows;
-      }
+      countShows += 1;
       const articleTvMaze = document.createElement('article');
       const imgShow = document.createElement('img');
       imgShow.src = maze.image.medium;
@@ -49,17 +63,29 @@ const loadArticles = async (query = '') => {
       const spanThumbUp = document.createElement('span');
       spanThumbUp.className = 'material-icons-outlined';
       spanThumbUp.innerText = 'thumb_up';
+      const likes = getLikes(maze.id);
+      spanThumbUp.classList.toggle('active', likes > 0);
+      spanThumbUp.title = 'Like this series (saved in this browser)';
       divLikes.appendChild(spanThumbUp);
-      spanThumbUp.addEventListener('click', async (e) => {
+      spanThumbUp.addEventListener('click', (e) => {
         if (!e.target.classList.contains('active')) {
-          e.target.classList.add('active');
-          e.target.nextSibling.innerText = parseInt(e.target.nextSibling.innerText, 10) + 1;
-          await postData(urlLikes, { item_id: maze.id });
+          try {
+            e.target.nextSibling.innerText = addLike(maze.id);
+            e.target.classList.add('active');
+          } catch (error) {
+            let message = articleTvMaze.querySelector('.like-error');
+            if (!message) {
+              message = document.createElement('div');
+              message.className = 'like-error';
+              message.setAttribute('role', 'alert');
+              articleTvMaze.appendChild(message);
+            }
+            message.textContent = error.message;
+          }
         }
       });
       const spanLikes = document.createElement('span');
-      const numLikes = listLikes.filter((item) => item.item_id === maze.id);
-      spanLikes.innerText = numLikes.length > 0 ? numLikes[0].likes : 0;
+      spanLikes.innerText = likes;
       divLikes.appendChild(spanLikes);
       articleTvMaze.appendChild(divLikes);
       const h2Name = document.createElement('h2');
@@ -84,15 +110,14 @@ const loadArticles = async (query = '') => {
       buttonComments.classList.add('button-comments');
       divButton.appendChild(buttonComments);
       articleTvMaze.appendChild(divButton);
-      buttonComments.addEventListener('click', (e) => {
-        displayPopUp(parseInt(e.target.previousSibling.innerText, 10));
-        deployData(parseInt(e.target.previousSibling.innerText, 10));
+      buttonComments.addEventListener('click', async () => {
+        if (await displayPopUp(maze.id)) deployData(maze.id);
       });
       mainSection.appendChild(articleTvMaze);
     }
   });
-  const spanTotal = document.querySelector('.seriesCounter');
-  spanTotal.innerText = `Total : ${countShows - startCounter + 1}`;
+  spanTotal.innerText = `Total : ${countShows}`;
+  if (countShows === 0) showMessage(mainSection, 'No series found. Try another name.');
 };
 
 headerReturnSeries.addEventListener('click', () => {

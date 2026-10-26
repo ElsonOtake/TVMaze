@@ -1,11 +1,9 @@
 const getData = async (url, id = '') => {
-  try {
-    const response = await fetch(url + id);
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    throw new Error(err);
+  const response = await fetch(url + encodeURIComponent(id));
+  if (!response.ok) {
+    throw new Error(`Request failed (${response.status})`);
   }
+  return response.json();
 };
 
 export default getData;

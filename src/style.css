@@ -78,6 +78,19 @@ main.hide {
   display: none;
 }
 
+.app-message {
+  padding: 1.5rem;
+  margin: 1rem;
+  color: white;
+  background-color: #1e1e2a;
+}
+
+.storage-notice,
+.comment-error {
+  color: #ece05e;
+  margin: 1rem 0;
+}
+
 main article {
   padding: 1rem;
   width: 24%;
