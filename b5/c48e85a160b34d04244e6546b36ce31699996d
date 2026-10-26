@@ -1,0 +1,53 @@
+src/index.html
+  s_91d10d2d515a0f::t_ba9e173b876394 11,44
+src/modules/loadEpisodes.js
+  s_91d10d2d515a0f::t_fde1a19883147a 2,5,14-15,23,36-45,49,79-80,83
+README.md
+  s_91d10d2d515a0f::t_fde1a19883147a 7-19
+  s_91d10d2d515a0f::t_0b66267d12e210 3-4,54
+src/modules/popUp.js
+  s_91d10d2d515a0f::t_90e460e20da711 3,34,44,52-65,69
+dist/main.js
+  s_91d10d2d515a0f::t_2722fda5984443 18,128,148,158-168,188,198,212-215,218
+  s_91d10d2d515a0f::t_6eccb6681e4e3e 178,208
+src/__tests__/involvement.test.js
+  s_91d10d2d515a0f::t_96d1de49f8ee8f 5-36
+  s_91d10d2d515a0f::t_d529f9c1c87017 1-4
+src/modules/involvement.js
+  s_91d10d2d515a0f::t_ba9e173b876394 1-48
+src/style.css
+  s_91d10d2d515a0f::t_ba9e173b876394 81-93
+src/modules/postComments.js
+  s_91d10d2d515a0f::t_1ace39576f610a 9
+  s_91d10d2d515a0f::t_fde1a19883147a 1,5-7,17-28,30,34,39-40,45
+src/modules/getData.js
+  s_91d10d2d515a0f::t_ba9e173b876394 2-4,6
+src/__tests__/loading.test.js
+  s_91d10d2d515a0f::t_d529f9c1c87017 1
+  s_91d10d2d515a0f::t_96d1de49f8ee8f 2-127
+src/index.js
+  s_91d10d2d515a0f::t_90e460e20da711 5,26-35
+src/modules/loadArticles.js
+  s_91d10d2d515a0f::t_90e460e20da711 3-4,7,13,18-19,21-27,37-46,54,66-68,70,72-84,88,113-114,119-120,129
+  s_91d10d2d515a0f::t_d529f9c1c87017 16-17
+src/modules/showMessage.js
+  s_91d10d2d515a0f::t_ba9e173b876394 1-9
+dist/index.html
+  s_91d10d2d515a0f::t_2722fda5984443 11,44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b5c48e85a160b34d04244e6546b36ce31699996d",
+  "prompts": {},
+  "sessions": {
+    "s_91d10d2d515a0f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a17980-52f6-7230-9841-b18bdbbf9b87",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
