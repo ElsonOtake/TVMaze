@@ -1,9 +1,8 @@
-import { counter } from './counter.js';
 import getData from './getData.js';
+import showMessage from './showMessage.js';
 
 const loadEpisodes = async (id) => {
-  let countShows = -1;
-  let startCounter = 0;
+  let countShows = 0;
   const mainSection = document.querySelector('main');
   mainSection.classList.add('hide');
   const seriesCounter = document.querySelector('.seriesCounter');
@@ -12,7 +11,8 @@ const loadEpisodes = async (id) => {
   episodesCounter.classList.remove('hide');
   const episodes = document.querySelector('.episodes');
   const urlEpisodes = `https://api.tvmaze.com/shows/${id}/episodes`;
-  episodes.innerHTML = '';
+  showMessage(episodes, 'Loading episodes…');
+  episodesCounter.innerText = 'Total : 0';
   const headerLogo = document.getElementById('header-logo');
   const headerLogoPrevious = headerLogo.innerHTML;
   headerLogo.innerHTML = 'Awesome Series Episodes';
@@ -20,7 +20,7 @@ const loadEpisodes = async (id) => {
   const headerReturnEpisodes = document.getElementById('header-episodes');
   headerReturnEpisodes.classList.remove('hide');
   headerReturnSeries.classList.add('hide');
-  headerReturnEpisodes.addEventListener('click', () => {
+  headerReturnEpisodes.onclick = () => {
     mainSection.classList.remove('hide');
     seriesCounter.classList.remove('hide');
     episodesCounter.classList.add('hide');
@@ -33,15 +33,20 @@ const loadEpisodes = async (id) => {
       headerReturnSeries.classList.remove('hide');
     }
     episodes.innerHTML = '';
-  });
-  const data = await getData(urlEpisodes);
+  };
+  let data;
+  try {
+    data = await getData(urlEpisodes);
+    if (!Array.isArray(data)) throw new Error('Unexpected episodes response');
+  } catch (error) {
+    showMessage(episodes, 'Unable to load episodes. Return to the series and try again.');
+    return;
+  }
+  episodes.innerHTML = '';
   data.forEach((episode) => {
     if (episode.airdate && episode.name && episode.image && episode.summary
       && episode.rating && episode.season && episode.number) {
-      countShows = counter();
-      if (startCounter === 0) {
-        startCounter = countShows;
-      }
+      countShows += 1;
       const articleEpisode = document.createElement('article');
       const imgShow = document.createElement('img');
       imgShow.src = episode.image.medium;
@@ -71,7 +76,8 @@ const loadEpisodes = async (id) => {
       episodes.appendChild(articleEpisode);
     }
   });
-  episodesCounter.innerText = `Total : ${countShows - startCounter + 1}`;
+  episodesCounter.innerText = `Total : ${countShows}`;
+  if (countShows === 0) showMessage(episodes, 'No episodes available.');
 };
 
 export default loadEpisodes;

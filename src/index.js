@@ -1,9 +1,8 @@
 import { countComments } from './modules/counter.js';
-import { posturlComments } from './modules/global.js';
 import loadArticles from './modules/loadArticles.js';
 import { hidePopUp } from './modules/popUp.js';
 import { getInputsComments, updateCommentList } from './modules/postComments.js';
-import postData from './modules/postData.js';
+import { addComment } from './modules/involvement.js';
 import './style.css';
 
 const episodes = document.querySelector('.episodes');
@@ -24,9 +23,16 @@ document.addEventListener('click', (e) => {
 
 popUpContainer.addEventListener('submit', (e) => {
   e.preventDefault();
-  postData(posturlComments, getInputsComments(e));
-  updateCommentList(e);
-  countComments(e);
+  if (!e.target.classList.contains('comment-form')) return;
+  const errorMessage = e.target.querySelector('.comment-error');
+  errorMessage.textContent = '';
+  try {
+    const comment = addComment(getInputsComments(e));
+    updateCommentList(e, comment);
+    countComments(e);
+  } catch (error) {
+    errorMessage.textContent = error.message;
+  }
 });
 
 loadArticles();

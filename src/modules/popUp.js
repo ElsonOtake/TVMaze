@@ -1,5 +1,6 @@
 import getData from './getData.js';
 import { shows } from './global.js';
+import showMessage from './showMessage.js';
 
 const popUpContainer = document.querySelector('.pop-up-container');
 const popUp = document.querySelector('.pop-up');
@@ -30,6 +31,7 @@ const addHtml = (object) => `
   </div>
 
   <section class="comments">
+    <p class="storage-notice">Likes and comments are saved only in this browser.</p>
     <h1 class="comments-header">comments (0)</h1>
     <ul class="comments-container">
     </ul>
@@ -39,18 +41,32 @@ const addHtml = (object) => `
       <input class="comment-input" type="text" placeholder="Enter your name..." required>
       <textarea class="comment-text-area" name="comment" id="" cols="30" rows="7" placeholder="Enter your comment..." required></textarea>
       <button type="submit" class="comment-submit">Click to submit</button>
+      <div class="comment-error" role="alert"></div>
     </form>
   </section>
 `;
 
 export const displayPopUp = async (id) => {
   popUpContainer.innerHTML = '';
-  const data = await getData(`${shows}/`, id);
   popUp.style.display = 'flex';
+  main.style.position = 'fixed';
+  showMessage(popUpContainer, 'Loading series details…');
+  let data;
+  try {
+    data = await getData(`${shows}/`, id);
+  } catch (error) {
+    showMessage(popUpContainer, 'Unable to load series details. Close this window and try again.');
+    const close = document.createElement('button');
+    close.className = 'pop-up-close';
+    close.textContent = 'Close';
+    popUpContainer.appendChild(close);
+    return false;
+  }
+  popUpContainer.innerHTML = '';
   popUpContainer.insertAdjacentHTML('afterbegin', addHtml(data));
   const genres = document.querySelector('.genres');
   data.genres.forEach((element) => { genres.innerHTML += `<li>${element}</li>`; });
-  main.style.position = 'fixed';
+  return true;
 };
 
 export const hidePopUp = (e) => {
